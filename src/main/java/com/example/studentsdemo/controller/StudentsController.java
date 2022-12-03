@@ -1,15 +1,16 @@
-package com.example.students.controller;
+package com.example.studentsdemo.controller;
 
 
-import com.example.students.entity.Students;
+import com.example.studentsdemo.entity.Students;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import com.example.students.repository.StudentsRepository;
-import com.example.students.service.StudentsService;
+import com.example.studentsdemo.repository.StudentsRepository;
+import com.example.studentsdemo.service.StudentsService;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
-@CrossOrigin(origins = "http://localhost:8080")
+
 @RestController
 @RequestMapping("/students")
 public class StudentsController extends BaseController<Students, StudentsService> {
@@ -19,7 +20,10 @@ public class StudentsController extends BaseController<Students, StudentsService
     StudentsRepository repository;
 
     @GetMapping()
-    public List<Students> getAll(){return repository.findAllStudents(); }
+    public List<Students> getAll(){
+        return repository.findAllStudents();
+    }
+
 
     @GetMapping("search/{search_word}")
     public List<Students> search(@PathVariable String search_word ) {return repository.findStudentsName(search_word);}

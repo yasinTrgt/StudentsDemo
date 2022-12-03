@@ -1,7 +1,7 @@
-package com.example.students.service;
+package com.example.studentsdemo.service;
 
-import com.example.students.entity.Lessons;
-import com.example.students.repository.LessonsRepository;
+import com.example.studentsdemo.entity.Lessons;
+import com.example.studentsdemo.repository.LessonsRepository;
 import org.springframework.stereotype.Service;
 
 @Service

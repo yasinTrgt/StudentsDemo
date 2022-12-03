@@ -1,4 +1,4 @@
-package com.example.students.entity;
+package com.example.studentsdemo.entity;
 
 public abstract class BaseEntity {
     public abstract Long getId();

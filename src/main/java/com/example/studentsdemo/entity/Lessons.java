@@ -1,7 +1,7 @@
-package com.example.students.entity;
+package com.example.studentsdemo.entity;
 
 
-import sun.util.calendar.LocalGregorianCalendar;
+
 
 import javax.persistence.*;
 import java.util.Date;

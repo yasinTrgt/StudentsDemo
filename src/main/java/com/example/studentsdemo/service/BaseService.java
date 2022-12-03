@@ -1,11 +1,13 @@
-package com.example.students.service;
+package com.example.studentsdemo.service;
 
 
-import com.example.students.entity.BaseEntity;
+import com.example.studentsdemo.entity.BaseEntity;
 import org.springframework.beans.factory.annotation.Autowired;
-import com.example.students.repository.BaseRepository;
+import com.example.studentsdemo.repository.BaseRepository;
 
 import java.util.List;
+import java.util.Optional;
+
 
 public class BaseService<T extends BaseEntity, R extends BaseRepository> {
 
@@ -24,7 +26,18 @@ public class BaseService<T extends BaseEntity, R extends BaseRepository> {
         return (T) repository.save(t);
     }
 
-    public void delete(Long entityId) {
-        repository.delete(entityId);
+    public void delete(Long id) {
+        repository.deleteById(id);
+    }
+    public T update(Long entityId, T entity) {
+        Optional<T> optionalT = repository.findById(entityId);
+
+        if (optionalT.isPresent()) {
+            entity.setId(entityId);
+            repository.save(entity);
+
+        }
+
+        return entity;
     }
 }

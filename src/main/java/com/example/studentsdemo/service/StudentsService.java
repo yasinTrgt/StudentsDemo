@@ -1,9 +1,9 @@
-package com.example.students.service;
+package com.example.studentsdemo.service;
 
 
-import com.example.students.entity.Students;
+import com.example.studentsdemo.entity.Students;
 import org.springframework.stereotype.Service;
-import com.example.students.repository.StudentsRepository;
+import com.example.studentsdemo.repository.StudentsRepository;
 
 @Service
 public class StudentsService extends BaseService  <Students, StudentsRepository> {
